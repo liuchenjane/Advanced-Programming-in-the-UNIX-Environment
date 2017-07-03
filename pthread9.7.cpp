@@ -10,12 +10,12 @@ int main(){
     int iRet;
     pthread_t tid;
     pthread_attr_t attr;
-    iRet = pthread_attr_init(&attr);
+    iRet = pthread_attr_init(&attr);//属性初始化
     if (iRet){
         printf("can't init attr %s\n", strerror(iRet) );
         return iRet;
     }
-    iRet = pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+    iRet = pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);//设为分离
     if (iRet){
         printf("can't set attr %s\n", strerror(iRet));
         return iRet;
@@ -25,7 +25,7 @@ int main(){
         printf("can't create thread %s\n", strerror(iRet));
         return iRet;
     }
-    iRet=pthread_join(tid, NULL);
+    iRet=pthread_join(tid, NULL);//由于状态分离，得不到线程的结束状态信息，返回错误
     if(iRet){
         printf("thread has been detached\n" );
             return iRet;

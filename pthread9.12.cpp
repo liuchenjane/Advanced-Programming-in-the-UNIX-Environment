@@ -10,7 +10,7 @@ void *func1(void *arg){
     cout<<"func1 start"<<endl;
     pthread_mutex_lock(&qlock);
     while(x<y){
-        pthread_cond_wait(&qready, &qlock);
+        pthread_cond_wait(&qready, &qlock);//阻塞等待
     }
     pthread_mutex_unlock(&qlock);
     sleep(3);
@@ -24,7 +24,7 @@ void *func2(void *arg){
     cout<<"has change x and y"<<endl;
     pthread_mutex_unlock(&qlock);
     if (x>y){
-        pthread_cond_signal(&qready);
+        pthread_cond_signal(&qready);//发送一个信号给另外一个正处于阻塞状态的线程
     }
     cout<<"func2 end"<<endl;
 }

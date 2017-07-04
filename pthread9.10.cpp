@@ -7,13 +7,13 @@ pthread_mutex_t mutex_x= PTHREAD_MUTEX_INITIALIZER;
 int total_ticket_num=20;
 void *sell_ticket(void *arg){
     for(int i=0;i<20;i++){
-        pthread_mutex_lock(&mutex_x);
+        pthread_mutex_lock(&mutex_x);//上锁
         if(total_ticket_num>0){
             sleep(1);
             printf("sell the %dth ticket\n", 20-total_ticket_num+1 );
             total_ticket_num--;
         }
-        pthread_mutex_unlock(&mutex_x);
+        pthread_mutex_unlock(&mutex_x);//释放锁
     }
     return 0;
 }

@@ -10,6 +10,7 @@ int main(){
     }
     else if(pid == 0){
         printf("sub-process, PID: %u, PPID: %u\n",getpid(),getppid());
+        //getpid()获取当前进程的pid，getppid()获得父进程的pid
     }
     else{
         printf("Parent, PID: %u, Sub-process PID:%u\n",getpid(),pid );

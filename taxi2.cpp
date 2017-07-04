@@ -24,7 +24,7 @@ void *taxi_arrive(void * name){
     cout<<"taxi: "<<(char*)name<<" arrives."<<endl;
     while(1){
         pthread_mutex_lock(&taxiMutex);
-        if(travelerCount>0){
+        if(travelerCount>0){//只有当等待乘客数大于0时，才触发条件变量
             pthread_cond_signal(&taxiCond);
             pthread_mutex_unlock(&taxiMutex);
             break;

@@ -10,7 +10,7 @@ using namespace std;
 pthread_cond_t taxiCond=PTHREAD_COND_INITIALIZER;
 pthread_mutex_t taxiMutex = PTHREAD_MUTEX_INITIALIZER;
 
-void * traveler_arrive(void *name){
+void * traveler_arrive(void *name){//乘客来了就等车
     cout<<"Traveler: "<<(char *)name<<" needs a taxi now!"<<endl;
     pthread_mutex_lock(&taxiMutex);
     pthread_cond_wait(&taxiCond,&taxiMutex);
@@ -19,7 +19,7 @@ void * traveler_arrive(void *name){
     pthread_exit((void*)0);
 }
 
-void *taxi_arrive(void * name){
+void *taxi_arrive(void * name){//出租车到了就通知乘客
     cout<<"taxi: "<<(char*)name<<" arrives."<<endl;
     pthread_cond_signal(&taxiCond);
     pthread_exit((void*)0);

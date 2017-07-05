@@ -43,4 +43,5 @@ sudo apt-get install manpages-posix-dev
 - 消息队列
 - 共享内存
 - 信号量
+- [套接字](https://github.com/liuchenjane/tcp_ip) 
 

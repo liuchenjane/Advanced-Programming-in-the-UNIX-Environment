@@ -25,3 +25,17 @@ sudo apt-get install manpages-posix-dev
 	- 读写锁
 	- 信号量
  
+ ## 2. 进程
+ [更多见进程.md](https://github.com/liuchenjane/Advanced-Programming-in-the-UNIX-Environment/blob/master/进程.md)<br>
+ - 进程的创建与结束<br>
+ 	- fork()<br>
+	- exit()<br>
+- 僵尸进程<br>
+	- wait()<br>
+	- waitpid()<br>
+- 守护进程<br>
+
+## 3. 进程间通信IPC
+常用的进程间通信方法：**管道、消息队列、共享内存、信号量、套接字**<br>
+套接字用于不同机器间的网络通信，其他用于同一机器上的进程间通信。<br>
+

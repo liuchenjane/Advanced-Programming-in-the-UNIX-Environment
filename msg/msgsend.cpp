@@ -15,6 +15,7 @@ int main(){
     int msgid=-1;
     struct msg_st data;
     char buffer[BUFSIZ];
+    //建立消息队列
     msgid = msgget((key_t)1234, 0666|IPC_CREAT);
     if (msgid == -1){
         fprintf(stderr,"msgget failed with error: %d\n", errno);
@@ -25,6 +26,7 @@ int main(){
         fgets(buffer, BUFSIZ, stdin);
         data.msg_type=1;
         strcpy(data.text, buffer);
+        //发送数据
         if(msgsnd(msgid,(void *)&data, MAX_TEXT,0)==-1){
             fprintf(stderr, "msgsnd failed\n");
                 exit(EXIT_FAILURE);

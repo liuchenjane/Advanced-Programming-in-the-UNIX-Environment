@@ -14,13 +14,15 @@ int main(){
     if(pid<0){
         printf("Error in fork\n" );
             exit(1);
-    }else if(pid==0){
+    }else if(pid==0){//子进程
         printf("int the child process...\n" );
+        //子进程向父进程写数据，关闭管道的读端
             close(fd[INPUT]);
             write(fd[OUTPUT],"hello world",strlen("hello world"));
             exit(0);
-    }else{
+    }else{//父进程
         printf("in the parent process...\n" );
+        //父进程从子进程读数据，关闭管道的写端
         close(fd[OUTPUT]);
         returned_count=read(fd[INPUT], buf, sizeof(buf));
         printf("%d bytes of dtata received from child process: %s\n",returned_count, buf );

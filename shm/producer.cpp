@@ -21,16 +21,17 @@ int main(){
     printf("Memory attached at %X\n",(long)shared_memory);
     struct shared_use_st *shared_stuff;
     shared_stuff = (struct shared_use_st*)shared_memory;
+    //以上是映射共享内存，与consumer一样
     int running = 1;
     char buffer[BUFSIZ];
     while(running){
-        while(shared_stuff->written==1){
+        while(shared_stuff->written==1){//消费者还没读完，等待
             sleep(1);
             printf("waiting for client...\n" );
         }     
         printf("enter some text:\n" );
         fgets(buffer, BUFSIZ, stdin);
-        strncpy(shared_stuff->text, buffer, TEXT_SZ);
+        strncpy(shared_stuff->text, buffer, TEXT_SZ);//写入数据
         shared_stuff->written=1;
         if(strncpy(buffer, "end",3)==0){
             running=0;

@@ -38,4 +38,9 @@ sudo apt-get install manpages-posix-dev
 ## 3. 进程间通信IPC
 常用的进程间通信方法：**管道、消息队列、共享内存、信号量、套接字**<br>
 套接字用于不同机器间的网络通信，其他用于同一机器上的进程间通信。<br>
+[更多见IPC.md](https://github.com/liuchenjane/Advanced-Programming-in-the-UNIX-Environment/blob/master/IPC.md)<br>
+- 管道
+- 消息队列
+- 共享内存
+- 信号量
 

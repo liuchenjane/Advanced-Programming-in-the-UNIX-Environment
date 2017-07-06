@@ -11,6 +11,7 @@ sudo apt-get install manpages-posix-dev
 编译时需要链接静态库文件pthread<br>
 `g++ xxx.cpp -o xxx -lpthread` <br>
 
+[文件IO等其他](https://github.com/liuchenjane/Programming-in-the-UNIX-Environment/blob/master/prepare.md)<br>
 ## 1. 多线程
 [更多见多线程.md](https://github.com/liuchenjane/Advanced-Programming-in-the-UNIX-Environment/blob/master/%E5%A4%9A%E7%BA%BF%E7%A8%8B.md)<br>
 

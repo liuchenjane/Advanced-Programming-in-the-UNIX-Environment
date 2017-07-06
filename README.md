@@ -1,5 +1,5 @@
-# Programming-in-the-UNIX-Environment UNIX
-环境下编程 <br>
+# Programming-in-the-UNIX-Environment
+UNIX 环境下编程 <br>
 
 ---
 最近在看《后台开发核心技术与应用实践》by徐晓鑫中关于多线程、进程和IPC的章节，脉络很清晰，适合初学者慢慢入手，结合其他经典UNIX书籍再深入。<br>

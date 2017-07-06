@@ -86,3 +86,4 @@ int semop(int semid, struct sembuf *sops, unsigned nsops);//改变信号量值
 
 int semctl(int semid, int semnum, int cmd,...);//直接控制信号量信息
 ```
+[用信号量解决共享内存同步问题，实现进程间通信](https://github.com/liuchenjane/Advanced-Programming-in-the-UNIX-Environment/tree/master/sem)

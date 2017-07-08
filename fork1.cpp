@@ -8,11 +8,11 @@ int main(){
         perror("fail to fork");
         exit(-1);
     }
-    else if(pid == 0){
+    else if(pid == 0){//子进程
         printf("sub-process, PID: %u, PPID: %u\n",getpid(),getppid());
         //getpid()获取当前进程的pid，getppid()获得父进程的pid
     }
-    else{
+    else{//父进程
         printf("Parent, PID: %u, Sub-process PID:%u\n",getpid(),pid );
             sleep(2);
     }

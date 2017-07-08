@@ -35,6 +35,7 @@ sudo apt-get install manpages-posix-dev
  [更多见进程.md](https://github.com/liuchenjane/Advanced-Programming-in-the-UNIX-Environment/blob/master/进程.md)<br>
  - 进程的创建与结束<br>
  	- fork()<br>
+	- exec()<br>
 	- exit()<br>
 - 僵尸进程<br>
 	- wait()<br>
